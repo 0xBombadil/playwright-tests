@@ -11,4 +11,5 @@ test("uniswap connect", async ({ page, wallet }) => {
   await page.getByTestId("wallet-option-INJECTED").click()
   await wallet.approve()
   await expect(page.getByTestId("web3-status-connected")).toBeVisible()
+  await page.waitForTimeout(10000)
 })
